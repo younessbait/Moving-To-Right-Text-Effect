@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Tahoma;
+  background-color: #333;
+}
+.link{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 40px auto;
+    color: rgba(128, 255, 0, 0.37);
+    font-size:50px;
+    border: 2px solid rgba(128, 255, 0, 0.37);
+    width: 400px;
+    height: 70px;
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+}
+.link::before{
+    content: attr(data-text);
+    position: absolute;
+    color:rgba(128, 255, 0, 0.37);
+    transform: translateX(-180%);
+    transition: 1.5s;
+}
+.link span{
+    display: block;
+    transition: 1.5s;
+}
+.link:hover span{
+    transform: translateX(180%);
+}
+.link:hover::before{
+    transform: translateX(-50%);
+}
